@@ -1,0 +1,40 @@
+# ===== Go build artifacts =====
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# ===== Go workspace =====
+/bin/
+/pkg/
+
+# ===== Go modules =====
+# vendor/   # раскомментируй, если vendor НЕ нужен в репозитории
+
+# ===== GoLand / IntelliJ IDEA =====
+.idea/
+*.iml
+
+# ===== Debug / profiling =====
+*.prof
+*.pprof
+*.trace
+
+# ===== Logs =====
+*.log
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Environment files =====
+.env
+.env.local
+.env.*.local
+
+# ===== Temporary files =====
+tmp/
+temp/
