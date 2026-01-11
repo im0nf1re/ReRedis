@@ -1,4 +1,4 @@
-package main
+package handler
 
 import (
 	"fmt"
@@ -6,25 +6,7 @@ import (
 	"net"
 )
 
-func main() {
-	l, err := net.Listen("tcp", "127.0.0.1:6379")
-	if err != nil {
-		panic(err)
-	}
-	defer l.Close()
-
-	for {
-		conn, err := l.Accept()
-		if err != nil {
-			fmt.Println("Error handling connection:", err)
-			continue
-		}
-
-		go handleClient(conn)
-	}
-}
-
-func handleClient(conn net.Conn) {
+func HandleClient(conn net.Conn) {
 	readBuf := make([]byte, 1024)
 	for {
 		n, err := conn.Read(readBuf)
